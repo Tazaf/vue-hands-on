@@ -1,17 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <img alt="Vue logo" v-bind:title="imgTitle" src="./assets/logo.png" />
+  <HelloWorld msg="Foo" v-bind:items="items" />
+  <FormComponent />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FormComponent from "./components/FormComponent.vue";
+import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    HelloWorld,
+    FormComponent,
+  },
+  data: () => {
+    return {
+      items: ["Foo", "Bar", "Baz", "oiwhefhewf"],
+      imgTitle: "Vue logo",
+    };
+  },
+};
 </script>
 
 <style>
